@@ -1,3 +1,64 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@import url('https://fonts.bunny.net/css?family=sora:300,400,500,600,700&family=manrope:400,500,600,700&display=swap');
+
+@layer base {
+    body {
+        font-family: 'Manrope', sans-serif;
+        @apply bg-surface-900 text-slate-100 antialiased;
+    }
+
+    h1, h2, h3, h4, h5, h6 {
+        font-family: 'Sora', sans-serif;
+    }
+}
+
+@layer components {
+    /* Glassmorphism card */
+    .glass {
+        background: linear-gradient(135deg, rgba(255,255,255,0.05) 0%, rgba(255,255,255,0.02) 100%);
+        backdrop-filter: blur(12px);
+        border: 1px solid rgba(255,255,255,0.08);
+        box-shadow: 0 4px 24px rgba(0,0,0,0.4), inset 0 1px 0 rgba(255,255,255,0.06);
+    }
+
+    /* Sidebar nav link */
+    .nav-link {
+        @apply flex items-center gap-3 px-3 py-2.5 rounded-lg text-slate-400 text-sm font-medium transition-all duration-200;
+    }
+
+    .nav-link:hover {
+        @apply bg-white/5 text-slate-200;
+    }
+
+    .nav-link.active {
+        @apply bg-brand-500/15 text-brand-400 border border-brand-500/20;
+    }
+
+    .nav-link.active svg {
+        @apply text-brand-400;
+    }
+
+    /* Stat tile */
+    .stat-tile {
+        @apply glass rounded-xl p-5 flex flex-col gap-2;
+    }
+
+    /* Primary button */
+    .btn-primary {
+        @apply inline-flex items-center gap-2 px-4 py-2 bg-brand-500 hover:bg-brand-600 text-white text-sm font-semibold rounded-lg transition-all duration-200 shadow-glow-emerald;
+    }
+
+    /* Input field */
+    .field {
+        @apply w-full bg-white/5 border border-white/10 rounded-lg px-3 py-2 text-sm text-slate-100 placeholder-slate-500
+               focus:outline-none focus:border-brand-500/50 focus:ring-1 focus:ring-brand-500/30 transition-all duration-200;
+    }
+
+    /* Section card */
+    .card {
+        @apply glass rounded-xl p-6;
+    }
+}
