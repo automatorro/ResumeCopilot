@@ -29,43 +29,43 @@
         {{-- Personal --}}
         <div x-show="tab === 'personal'" class="card">
             <h2 class="text-base font-semibold text-slate-200 mb-4">Informații personale</h2>
-            <p class="text-sm text-slate-400">Formularul vine în curând.</p>
+            @livewire('career-brain.personal-form')
         </div>
 
         {{-- Goals --}}
         <div x-show="tab === 'goals'" class="card">
             <h2 class="text-base font-semibold text-slate-200 mb-4">Obiective de carieră</h2>
-            <p class="text-sm text-slate-400">Formularul vine în curând.</p>
+            @livewire('career-brain.goals-form')
         </div>
 
         {{-- Experience --}}
         <div x-show="tab === 'experience'" class="card">
             <h2 class="text-base font-semibold text-slate-200 mb-4">Experiență profesională</h2>
-            <p class="text-sm text-slate-400">Lista vine în curând.</p>
+            @livewire('career-brain.experience-list')
         </div>
 
         {{-- Education --}}
         <div x-show="tab === 'education'" class="card">
             <h2 class="text-base font-semibold text-slate-200 mb-4">Educație</h2>
-            <p class="text-sm text-slate-400">Lista vine în curând.</p>
+            @livewire('career-brain.education-list')
         </div>
 
         {{-- Skills --}}
         <div x-show="tab === 'skills'" class="card">
             <h2 class="text-base font-semibold text-slate-200 mb-4">Competențe</h2>
-            <p class="text-sm text-slate-400">Lista vine în curând.</p>
+            @livewire('career-brain.skill-list')
         </div>
 
         {{-- Languages --}}
         <div x-show="tab === 'languages'" class="card">
             <h2 class="text-base font-semibold text-slate-200 mb-4">Limbi cunoscute</h2>
-            <p class="text-sm text-slate-400">Lista vine în curând.</p>
+            @livewire('career-brain.language-list')
         </div>
 
         {{-- Certifications --}}
         <div x-show="tab === 'certificates'" class="card">
             <h2 class="text-base font-semibold text-slate-200 mb-4">Certificări</h2>
-            <p class="text-sm text-slate-400">Lista vine în curând.</p>
+            @livewire('career-brain.certification-list')
         </div>
 
     </div>
