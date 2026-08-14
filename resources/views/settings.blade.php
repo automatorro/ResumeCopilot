@@ -28,15 +28,26 @@
         </div>
 
         {{-- Language --}}
+        @php $currentLocale = auth()->user()->profile?->language_preference ?? session('locale', 'ro'); @endphp
         <div class="card">
             <h2 class="text-base font-semibold text-slate-200 mb-4">Limbă interfață</h2>
             <div class="flex gap-3">
-                <button class="px-4 py-2 rounded-lg text-sm font-medium bg-brand-500/20 text-brand-400 border border-brand-500/30">
-                    🇷🇴 Română
-                </button>
-                <button class="px-4 py-2 rounded-lg text-sm font-medium bg-white/5 text-slate-400 border border-white/10 hover:bg-white/10">
-                    🇬🇧 English
-                </button>
+                <form method="POST" action="{{ route('language.switch', 'ro') }}">
+                    @csrf
+                    <button type="submit"
+                            class="px-4 py-2 rounded-lg text-sm font-medium transition-all duration-200
+                                   {{ $currentLocale === 'ro' ? 'bg-brand-500/20 text-brand-400 border border-brand-500/30' : 'bg-white/5 text-slate-400 border border-white/10 hover:bg-white/10' }}">
+                        🇷🇴 Română
+                    </button>
+                </form>
+                <form method="POST" action="{{ route('language.switch', 'en') }}">
+                    @csrf
+                    <button type="submit"
+                            class="px-4 py-2 rounded-lg text-sm font-medium transition-all duration-200
+                                   {{ $currentLocale === 'en' ? 'bg-brand-500/20 text-brand-400 border border-brand-500/30' : 'bg-white/5 text-slate-400 border border-white/10 hover:bg-white/10' }}">
+                        🇬🇧 English
+                    </button>
+                </form>
             </div>
         </div>
 

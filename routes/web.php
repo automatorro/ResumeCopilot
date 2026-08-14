@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\LanguageController;
 use Illuminate\Support\Facades\Route;
 
 // Pagina publică de landing
@@ -15,6 +16,8 @@ Route::middleware(['auth', 'verified'])->group(function () {
     Route::get('/cv-import', fn () => view('cv-import'))->name('cv-import');
     Route::get('/settings', fn () => view('settings'))->name('settings');
 });
+
+Route::post('/language/{locale}', [LanguageController::class, 'switch'])->name('language.switch')->middleware('auth');
 
 // Rute profil (folosite de navigarea Breeze)
 Route::middleware('auth')->group(function () {
